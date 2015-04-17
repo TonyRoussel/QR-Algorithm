@@ -1,0 +1,7 @@
+*~
+###For python byte code
+*.pyc
+
+# Precompiled Headers
+*.gch
+*.pch
