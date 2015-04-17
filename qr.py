@@ -8,6 +8,7 @@ def qr(toCompute, maxIter):
         A[0] = A[1]
         Q, R = qrDecomposition(A[0])
         A[1] = np.dot(R, Q)
+        print k, "/", maxIter
     return A[1]
 
 # QR DECOMPOSITION
@@ -29,10 +30,10 @@ def make_householderOriginal(a):
     beta = 2 / np.dot(v, v)
     vtv = np.dot(v[:, None], v[None, :])
     H -= beta * vtv
-    print "V:", v
-    print "Beta:", beta
-    print "vtv:", vtv
-    print "H:", H
+#     print "V:", v
+#     print "Beta:", beta
+#     print "vtv:", vtv
+#     print "H:", H
     return H
 
 def make_householderSimplification(a):
@@ -43,10 +44,10 @@ def make_householderSimplification(a):
     beta = 2 / (np.dot(v, v.transpose()))
     vtv = np.dot(np.matrix(v).transpose(), np.matrix(v))
     H -= np.dot(beta, vtv)
-    print "u:", u
-    print "Beta:", beta
-    print "vtv:", vtv
-    print "H:", H
+#     print "u:", u
+#     print "Beta:", beta
+#     print "vtv:", vtv
+#     print "H:", H
     return H
 # !QR DECOMPOSITION
 

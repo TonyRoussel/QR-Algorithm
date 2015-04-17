@@ -9,5 +9,12 @@ toCompute = np.array([
 print "Computing for:"
 print toCompute
 result = qr(toCompute, 10000)
+
+print "Your result"
+print np.diagonal(result)
 print result
-print np.linalg.eig(toCompute)
+
+print "Numpy result"
+w, v = np.linalg.eig(toCompute)
+print w
+print v
