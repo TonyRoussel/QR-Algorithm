@@ -2,14 +2,16 @@ import numpy as np
 
 def qr(toCompute, maxIter):
     A = []
+    Q = np.eye(toCompute.shape[0])
     A.append(None)
     A.append(toCompute)
     for k in range(maxIter):
         A[0] = A[1]
-        Q, R = qrDecomposition(A[0])
-        A[1] = np.dot(R, Q)
+        q, R = qrDecomposition(A[0])
+        A[1] = np.dot(R, q)
+        Q = Q.dot(q)
         print k, "/", maxIter
-    return A[1]
+    return np.diagonal(A[1]), Q
 
 # QR DECOMPOSITION
 def qrDecomposition(A):

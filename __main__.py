@@ -8,11 +8,11 @@ toCompute = np.array([
         ])
 print "Computing for:"
 print toCompute
-result = qr(toCompute, 10000)
+eigenvalue, eigenvector = qr(toCompute, 10000)
 
 print "Your result"
-print np.diagonal(result)
-print result
+print eigenvalue
+print eigenvector
 
 print "Numpy result"
 w, v = np.linalg.eig(toCompute)
