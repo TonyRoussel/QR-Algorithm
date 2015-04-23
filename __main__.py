@@ -1,5 +1,6 @@
 import numpy as np
 from qr import qr
+from sklearn.preprocessing import normalize
 
 toCompute = np.array([
         [12, -51,   4],
@@ -8,11 +9,12 @@ toCompute = np.array([
         ])
 print "Computing for:"
 print toCompute
-eigenvalue, eigenvector = qr(toCompute, 10000)
+eigenvalue, eigenvector = qr(toCompute, 100)
 
 print "Your result"
 print eigenvalue
 print eigenvector
+#print normalize(eigenvector)
 
 print "Numpy result"
 w, v = np.linalg.eig(toCompute)
